@@ -21,14 +21,20 @@ Before starting the containers, initialize the Airflow metadata database:
 docker-compose run --rm airflow-webserver airflow db init
 ```
 
-3. **Start the Docker containers:**
+3. **Create an Airflow user for login:**
+```bash
+docker-compose run --rm airflow-webserver airflow users create --username admin --password <your_password> --firstname Admin --lastname User --role Admin --email admin@example.com
+```
+*For testing purposes, it is recommended to create a user with Username: admin and Password: admin.*
+
+5. **Start the Docker containers:**
 
 Bring up all services in detached mode:
 ```bash
 docker-compose up -d
 ```
 
-4. **Access the Airflow UI:**
+5. **Access the Airflow UI:**
 
 Open your web browser and navigate to http://localhost:8080. You can trigger the ETL DAG manually or wait for its scheduled run.
 
