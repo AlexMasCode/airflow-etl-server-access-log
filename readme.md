@@ -25,9 +25,9 @@ docker-compose run --rm airflow-webserver airflow db init
 ```bash
 docker-compose run --rm airflow-webserver airflow users create --username admin --password <your_password> --firstname Admin --lastname User --role Admin --email admin@example.com
 ```
-*For testing purposes, it is recommended to create a user with Username: admin and Password: admin.*
+*For testing purposes, it is recommended to create a user with Username: admin and Password: admin*
 
-5. **Start the Docker containers:**
+4. **Start the Docker containers:**
 
 Bring up all services in detached mode:
 ```bash
